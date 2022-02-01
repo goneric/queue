@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-go@v2
         with:
           stable: false
-          go-version: ^1.18.0-beta1
+          go-version: ^1.18.0-beta2
         id: go
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
       - name: golangci-lint
         uses: reviewdog/action-golangci-lint@v2
         with:
-          go_version: '1.18.0-beta1'
+          go_version: "1.18.0-beta1"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           golangci_lint_flags: "--timeout=15m --enable-all --exclude-use-default=false -D wsl -D godox -D promlinter -D tagliatelle"
           level: warning
